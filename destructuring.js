@@ -22,7 +22,7 @@ var carDetails = {
 */
 
 //Code Here
-
+const newCarDetails = { ...carDetails}
 
 
 ////////// PROBLEM 2 //////////
