@@ -51,19 +51,19 @@ var employees = [
 */
 
 //Code Here
-let employeeUpdater = () => {
-  let newArr = employees.map(element => {
-    if(element.firstName === 'Theo'){
-      return delete element.firstName
-    }
-    if(element.name === 'Lorie'){
-      return element.department = "HR"
-    }
-  })
-  return newArr
 
-} 
-// NOTE
+let employeeUpdater = () =>{
+  for(var i=0; i<employees.length; i++){
+  if (employees[i].firstName === 'Theo'){
+    employees.splice(i,1)
+  } else {if (employees[i].firstName === 'Lorie'){
+    employees[i].department = 'HR'
+  }}
+}
+return employees;
+}
+// console.log(employees)
+
 
 
 ////////// PROBLEM 2 //////////
@@ -81,7 +81,13 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+let removeDuplicates = (arr) => {
+  let rd = arr.filter((item, pos) => {
+    return arr.indexOf(item) == pos
+  }) 
+  return rd
+}
+// hope its chill to do it like this its still nesting just not with "for loops"
 
 
 ////////// PROBLEM 3 //////////
@@ -111,6 +117,9 @@ var cat = {
 //Code Here
 var grumpyActivity;
 var fluffy2ndFriend;
+
+grumpyActivity = cat.catFriends[0].activities[1]
+fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -151,7 +160,25 @@ var myCar = {
 */
 
 //Code Here
+let recordCleaner = () => {
+  for (let key in myCar){
+    if(key.includes('accidents')){
+      for(let crashes in myCar[key]){
+          myCar[key][crashes] = false
+      }
+    }
+  }
+  return recordCleaner
+}
 
+
+// for (let key in myCar){
+//   if (key === "atFaultForAccident"){
+//     for(let AFFA in myCar[key]){
+//       myCar[key][AFFA] = 'false'
+//     }
+//   }
+// }
 
 
 ////////// PROBLEM 5 //////////
@@ -170,5 +197,28 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+function looper() {
+newArr = [];
+ for(let i = 0; i < numsArr.length; i++){
+   for(let k = 0; k < numsArr[i].length; k++){
+     if(numsArr[i][k] % 2 === 0){
+        numsArr[i][k] = "even"
+     } else {
+       numsArr[i][k] = "odd"
+     }
+   }
+ }
+ return numsArr
+}
+
+
+
+
+
+
+
+
+
+
 
 
