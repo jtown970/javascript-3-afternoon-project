@@ -11,7 +11,7 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
+// var values = { 
 //   one: 'These',
 //   two: ' are',
 //   three: ' the',

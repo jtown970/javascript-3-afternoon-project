@@ -21,7 +21,7 @@ var employees = [
     "lastName": "Swalowe",
     "email": "cswalowe1@example.com",
     "department": "Engineering"
-  },
+  }, 
   {
     "firstName": "Theo",
     "lastName": "Trill",
@@ -51,6 +51,18 @@ var employees = [
 */
 
 //Code Here
+let employeeUpdater = () => {
+  let newArr = employees.map(element => {
+    if(element.firstName === 'Theo'){
+      return delete element.firstName
+    }
+    if(element.name === 'Lorie'){
+      return element.department = "HR"
+    }
+  })
+  return newArr
+
+} 
 
 
 
